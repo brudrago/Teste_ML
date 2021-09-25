@@ -11,7 +11,7 @@ struct ProductInfoDetailsBuilder {
 
     // MARK: - Public Functions
 
-    static func build() -> UIViewController {
+    static func build(product: ProductListResponse) -> UIViewController {
         let viewController = ProductInfoDetailsViewController()
         let interactor = ProductInfoDetailsInteractor()
         let presenter = ProductInfoDetailsPresenter()

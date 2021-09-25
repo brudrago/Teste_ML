@@ -21,9 +21,9 @@ class ProductListRouter: ProductListRouterProtocol {
     // MARK: - Public Functions
 
     func proceedToProductInfoDetails(product: ProductListResponse) {
-//        let userInfoViewController = UserInfoBuilder.build(follower: follower)
-//
-//        viewController.navigationController?
-//            .pushViewController(userInfoViewController, animated: true)
+        let productInfoDetailsViewController = ProductInfoDetailsBuilder.build(product: product)
+
+        viewController.navigationController?
+            .pushViewController(productInfoDetailsViewController, animated: true)
     }
 }

@@ -26,14 +26,15 @@ class ProductInfoDetailsViewController: UIViewController {
 
     // MARK: - Private Properties
 
-    private lazy var featureView: ProductInfoDetailsView = {
+    private lazy var productInfoDetailsView: ProductInfoDetailsView = {
         return ProductInfoDetailsView(self)
     }()
 
     // MARK: - View Lifecycle
 
     override func loadView() {
-        self.view = featureView
+        super.loadView()
+        self.view = productInfoDetailsView
     }
 
     override func viewDidLoad() {
@@ -52,10 +53,7 @@ class ProductInfoDetailsViewController: UIViewController {
 // MARK: - ProductInfoDetailsViewDelegate Extension
 
 extension ProductInfoDetailsViewController: ProductInfoDetailsViewDelegate {
-
-    func didDoSomething() {
-        // Put here your view delegate action
-    }
+    
 }
 
 // MARK: - ProductInfoDetailsViewControllerProtocol Extension

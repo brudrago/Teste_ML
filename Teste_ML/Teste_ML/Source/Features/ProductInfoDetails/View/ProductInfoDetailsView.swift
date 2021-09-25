@@ -12,7 +12,38 @@ class ProductInfoDetailsView: UIView {
 
     // MARK: - UI Components
 
-    // Put here your ui components
+    private lazy var scrollView: UIScrollView = {
+        return UIScrollView(frame: .zero)
+    }()
+    
+    private lazy var scrollContent: UIView = {
+        let contentView = UIView(frame: .zero)
+        contentView.backgroundColor = .clear
+        return contentView
+    }()
+    
+    private lazy var containerStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        return stack
+    }()
+    
+    private lazy var productNameLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
+    private lazy var productImageView: UIImageView = {
+        let logo = UIImageView()
+        logo.image = UIImage(named: "ml-logo")
+        logo.contentMode = .scaleToFill
+        return logo
+    }()
+    
+    private lazy var detailsLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
 
     // MARK: - Private Properties
 

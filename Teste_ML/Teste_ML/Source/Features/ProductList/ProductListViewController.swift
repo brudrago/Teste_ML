@@ -26,14 +26,15 @@ class ProductListViewController: UIViewController {
 
     // MARK: - Private Properties
 
-    private lazy var featureView: ProductListView = {
+    private lazy var productListView: ProductListView = {
         return ProductListView(self)
     }()
 
     // MARK: - View Lifecycle
 
     override func loadView() {
-        self.view = featureView
+        super.loadView()
+        self.view = productListView
     }
 
     override func viewDidLoad() {

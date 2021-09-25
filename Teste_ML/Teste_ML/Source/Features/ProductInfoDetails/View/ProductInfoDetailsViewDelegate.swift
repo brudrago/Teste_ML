@@ -9,5 +9,4 @@ import Foundation
 
 protocol ProductInfoDetailsViewDelegate: AnyObject {
 
-    func didDoSomething()
 }

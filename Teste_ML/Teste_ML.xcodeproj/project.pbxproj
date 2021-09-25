@@ -312,6 +312,7 @@
 		7020A6C226FFC06300D5DCFE /* ProductList */ = {
 			isa = PBXGroup;
 			children = (
+				7020A6EA26FFCF7500D5DCFE /* Cell */,
 				7020A6D126FFC3E100D5DCFE /* View */,
 				7020A6C326FFC09100D5DCFE /* ProductListPresenter.swift */,
 				7020A6C426FFC09100D5DCFE /* ProductListRouter.swift */,
@@ -325,9 +326,8 @@
 		7020A6D126FFC3E100D5DCFE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7020A6C926FFC09100D5DCFE /* ProductListViewDelegate.swift */,
 				7020A6C826FFC09100D5DCFE /* ProductListView.swift */,
-				7020A6D226FFC6C900D5DCFE /* CardProductsCell.swift */,
+				7020A6C926FFC09100D5DCFE /* ProductListViewDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -351,15 +351,31 @@
 		7020A6DA26FFCD8500D5DCFE /* ProductInfoDetails */ = {
 			isa = PBXGroup;
 			children = (
+				7020A6E926FFCF5000D5DCFE /* View */,
 				7020A6DB26FFCD9700D5DCFE /* ProductInfoDetailsPresenter.swift */,
 				7020A6DC26FFCD9700D5DCFE /* ProductInfoDetailsRouter.swift */,
 				7020A6DD26FFCD9700D5DCFE /* ProductInfoDetailsViewController.swift */,
 				7020A6DE26FFCD9700D5DCFE /* ProductInfoDetailsBuilder.swift */,
 				7020A6DF26FFCD9700D5DCFE /* ProductInfoDetailsInteractor.swift */,
+			);
+			path = ProductInfoDetails;
+			sourceTree = "<group>";
+		};
+		7020A6E926FFCF5000D5DCFE /* View */ = {
+			isa = PBXGroup;
+			children = (
 				7020A6E026FFCD9700D5DCFE /* ProductInfoDetailsView.swift */,
 				7020A6E126FFCD9700D5DCFE /* ProductInfoDetailsViewDelegate.swift */,
 			);
-			path = ProductInfoDetails;
+			path = View;
+			sourceTree = "<group>";
+		};
+		7020A6EA26FFCF7500D5DCFE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7020A6D226FFC6C900D5DCFE /* CardProductsCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C91958DC3F707F32FC23C4CC /* Pods */ = {
