@@ -7,20 +7,25 @@
 
 import Foundation
 
-protocol SearchInteractorProtocol {
-
-    // Put here your protocol
+protocol SearchDataStoreProtocol {
+    
+    var product: String? { get set }
 }
 
-class SearchInteractor: SearchInteractorProtocol {
+protocol SearchInteractorProtocol {
 
+    func validate(_ product: String)
+}
+
+class SearchInteractor: SearchInteractorProtocol, SearchDataStoreProtocol {
+    
     // MARK: - VIP Properties
 
     var presenter: SearchPresenterProtocol!
 
-    // MARK: - Private Properties
+    //MARK: - Public Properties
     
-    // Put here your private properties
+    var product: String?
 
     // MARK: - Inits
 
@@ -28,5 +33,38 @@ class SearchInteractor: SearchInteractorProtocol {
 
     // MARK: - Public Functions
 
-    // Put here your public functions
+    func validate(_ product: String) {
+        guard validate(product) else { return }
+        self.product = product
+        presenter.searchsearchForProducts()
+    }
+ 
+    //MARK: - Private Functions
+
+   private func validate(_ product: String) -> Bool {
+    let isProductNameEmpty = product.isEmpty
+    let isProductValid = isProductValid(product)
+    
+    if isProductNameEmpty {
+        let titleMessage = "Olá"
+        let message = "Por favor digite o produto procurado"
+        let buttonTitle = "Ok"
+        presenter.showAlert(title: titleMessage, message: message, buttonTitle: buttonTitle)
+        return false
+    }
+    
+    if !isProductValid {
+        let titleMessage = "Olá"
+        let message = "O produto digitado"
+        let buttonTitle = "Ok"
+        presenter.showAlert(title: titleMessage, message: message, buttonTitle: buttonTitle)
+        return false
+    }
+        return true
+    }
+    
+    private func isProductValid(_ item: String) -> Bool {
+        let product = item
+        return product.count > 2
+    }
 }

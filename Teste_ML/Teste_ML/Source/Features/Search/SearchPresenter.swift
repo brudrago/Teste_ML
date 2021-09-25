@@ -8,25 +8,29 @@
 import Foundation
 
 protocol SearchPresenterProtocol {
-
-    // Put here your protocol
+    
+    func showAlert(title: String, message: String, buttonTitle: String)
+    
+    func searchsearchForProducts()
 }
 
 class SearchPresenter: SearchPresenterProtocol {
-
-    // MARK: - VIP Properties
-
-    weak var viewController: SearchViewControllerProtocol!
-
-    // MARK: - Private Properties
     
-    // Put here your private properties
-
+    // MARK: - VIP Properties
+    
+    weak var viewController: SearchViewControllerProtocol!
+    
     // MARK: - Inits
-
+    
     init() {}
-
+    
     // MARK: - Public Functions
-
-    // Put here your public functions
+    
+    func showAlert(title: String, message: String, buttonTitle: String) {
+        viewController.showAlert(title: title, message: message, buttonTitle: buttonTitle)
+    }
+    
+    func searchsearchForProducts() {
+        viewController.searchForProducts()
+    }
 }

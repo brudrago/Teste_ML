@@ -9,7 +9,12 @@ import Foundation
 
 protocol SearchRouterProtocol {
 
-    // Put here your protocol
+    func proceedToProductsList()
+}
+
+protocol SearchDataPassingProtocol {
+    
+    var dataStore: SearchDataStoreProtocol! { get }
 }
 
 class SearchRouter: SearchRouterProtocol {
@@ -17,8 +22,18 @@ class SearchRouter: SearchRouterProtocol {
     // MARK: - VIP Properties
 
     weak var viewController: SearchViewController!
+    
+    var dataStore: SearchDataStoreProtocol!
 
     // MARK: - Public Functions
 
-    // Put here your public functions
+    func proceedToProductsList() {
+//        guard let username = dataStore.username else { return }
+//
+//        let followerListViewController = FollowerListBuilder.build(username)
+//        followerListViewController.title = username
+//
+//        viewController.navigationController?
+//            .pushViewController(followerListViewController, animated: true)
+    }
 }

@@ -25,6 +25,7 @@
 		7020A6B626FFA8C800D5DCFE /* mercado-livre.png in Resources */ = {isa = PBXBuildFile; fileRef = 7020A6B526FFA8C800D5DCFE /* mercado-livre.png */; };
 		7020A6BB26FFAB1D00D5DCFE /* MLTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A6BA26FFAB1D00D5DCFE /* MLTextField.swift */; };
 		7020A6BE26FFAB6C00D5DCFE /* MLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A6BD26FFAB6C00D5DCFE /* MLButton.swift */; };
+		7020A6C126FFBB4D00D5DCFE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A6C026FFBB4D00D5DCFE /* Constants.swift */; };
 		D9F5DE3807CDBAB5D4789F3A /* Pods_Teste_MLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17598219604D5012A395F28 /* Pods_Teste_MLTests.framework */; };
 		E345817179BC821FEA57B158 /* Pods_Teste_ML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC280353E83677807CD5B815 /* Pods_Teste_ML.framework */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,7 @@
 		7020A6B526FFA8C800D5DCFE /* mercado-livre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mercado-livre.png"; sourceTree = "<group>"; };
 		7020A6BA26FFAB1D00D5DCFE /* MLTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTextField.swift; sourceTree = "<group>"; };
 		7020A6BD26FFAB6C00D5DCFE /* MLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLButton.swift; sourceTree = "<group>"; };
+		7020A6C026FFBB4D00D5DCFE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC280353E83677807CD5B815 /* Pods_Teste_ML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teste_ML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB48D39BDA79D291262C6AE /* Pods-Teste_ML-Teste_MLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste_ML-Teste_MLUITests.release.xcconfig"; path = "Target Support Files/Pods-Teste_ML-Teste_MLUITests/Pods-Teste_ML-Teste_MLUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C17598219604D5012A395F28 /* Pods_Teste_MLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teste_MLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +214,7 @@
 		7020A6B126FFA6AE00D5DCFE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				7020A6BF26FFBB0900D5DCFE /* Utilities */,
 				7020A6B826FFAAD900D5DCFE /* CustomViews */,
 				7020A6B226FFA6B500D5DCFE /* Common */,
 			);
@@ -258,6 +261,14 @@
 				7020A6BD26FFAB6C00D5DCFE /* MLButton.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		7020A6BF26FFBB0900D5DCFE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7020A6C026FFBB4D00D5DCFE /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		C91958DC3F707F32FC23C4CC /* Pods */ = {
@@ -528,6 +539,7 @@
 				7020A67126FFA38800D5DCFE /* SceneDelegate.swift in Sources */,
 				7020A6AF26FFA61A00D5DCFE /* SearchView.swift in Sources */,
 				7020A6BE26FFAB6C00D5DCFE /* MLButton.swift in Sources */,
+				7020A6C126FFBB4D00D5DCFE /* Constants.swift in Sources */,
 				7020A6AA26FFA61A00D5DCFE /* SearchPresenter.swift in Sources */,
 				7020A6B426FFA6C400D5DCFE /* ViewCodeProtocol.swift in Sources */,
 				7020A6BB26FFAB1D00D5DCFE /* MLTextField.swift in Sources */,

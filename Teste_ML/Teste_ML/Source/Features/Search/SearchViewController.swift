@@ -8,8 +8,10 @@
 import UIKit
 
 protocol SearchViewControllerProtocol: AnyObject {
+    
+    func showAlert(title: String, message: String, buttonTitle: String)
 
-    // Put here your protocol
+    func searchForProducts()
 }
 
 class SearchViewController: UIViewController {
@@ -20,10 +22,6 @@ class SearchViewController: UIViewController {
 
     var router: SearchRouterProtocol!
 
-    // MARK: - Public Properties
-
-    // Put here your public properties
-
     // MARK: - Private Properties
 
     private lazy var searchView: SearchView = {
@@ -33,20 +31,39 @@ class SearchViewController: UIViewController {
     // MARK: - View Lifecycle
 
     override func loadView() {
+        super.loadView()
         self.view = searchView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        createDismissKeyboardTapGesture()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigation()
     }
 
     // MARK: - Public Functions
 
-    // Put here your public functions
-
+    func showAlert(title: String, message: String, buttonTitle: String) {
+      //  presentFVCAlertOnMainThread(title: title , message: message, buttonTitle: buttonTitle)
+    }
+    
+    func searchForProducts() {
+      //  router.proceedToFollowerList()
+    }
     // MARK: - Private Functions
 
-    // Put here your private functions
+    private func setupNavigation() {
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    private  func createDismissKeyboardTapGesture() {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
+    }
 }
 
 // MARK: - SearchViewDelegate Extension
@@ -63,5 +80,4 @@ extension SearchViewController: SearchViewDelegate {
 
 extension SearchViewController: SearchViewControllerProtocol {
     
-    // Put here your protocol
 }

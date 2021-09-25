@@ -38,7 +38,7 @@ class SearchView: UIView {
     
     private lazy var productTextField: UITextField = {
         let textField = MLTextField()
-        textField.placeholder = "Ex: celular,lápis ..."
+        textField.placeholder = K.placeholder
         textField.delegate = self
         return textField
     } ()
@@ -46,7 +46,7 @@ class SearchView: UIView {
     private lazy var searchProductsButton: UIButton = {
         let button = MLButton(
             backgroundColor: .systemYellow,
-            title: "Buscar")
+            title: K.search)
         return button
     } ()
     
