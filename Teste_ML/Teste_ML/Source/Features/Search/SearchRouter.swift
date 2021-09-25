@@ -28,12 +28,11 @@ class SearchRouter: SearchRouterProtocol {
     // MARK: - Public Functions
 
     func proceedToProductsList() {
-//        guard let username = dataStore.username else { return }
-//
-//        let followerListViewController = FollowerListBuilder.build(username)
-//        followerListViewController.title = username
-//
-//        viewController.navigationController?
-//            .pushViewController(followerListViewController, animated: true)
+        guard let product = dataStore.product else { return }
+
+        let productListViewController = ProductListBuilder.build(product)
+
+        viewController.navigationController?
+            .pushViewController(productListViewController , animated: true)
     }
 }
