@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class SearchView: UIView {
-
+    
     // MARK: - UI Components
     
     private lazy var scrollView: UIScrollView = {
@@ -21,7 +21,14 @@ class SearchView: UIView {
         contentView.backgroundColor = .clear
         return contentView
     }()
-
+    
+    private lazy var searchStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 48
+        return stack
+    }()
+    
     private lazy var logoImageView: UIImageView = {
         let logo = UIImageView()
         logo.image = UIImage(named: "ml-logo-transparent")
@@ -42,32 +49,38 @@ class SearchView: UIView {
             title: "Buscar")
         return button
     } ()
-
+    
+    private lazy var footerView: UIView = {
+        let footer = UIView(frame: .zero)
+        footer.backgroundColor = .clear
+        return footer
+    }()
+    
     // MARK: - Private Properties
-
+    
     private unowned let delegate: SearchViewDelegate
-
+    
     // MARK: - Inits
-
+    
     init(_ delegate: SearchViewDelegate) {
         self.delegate = delegate
         super.init(frame: .zero)
         setupUI()
     }
-
+    
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     // MARK: - Public Functions
-
+    
     func getProduct() -> String {
         return productTextField.text ?? ""
     }
-
+    
     // MARK: - Private Functions
-
+    
     @objc
     private func didSelecSearchProductButton(_ button: MLButton) {
         let product = productTextField.text
@@ -78,15 +91,17 @@ class SearchView: UIView {
 // MARK: - ViewCodeProtocol Extension
 
 extension SearchView: ViewCodeProtocol {
-
+    
     func setupSubviews() {
         addSubview(scrollView)
         scrollView.addSubview(scrollContent)
-        scrollContent.addSubview(logoImageView)
-        scrollContent.addSubview(productTextField)
+        scrollContent.addSubview(searchStackView)
+        searchStackView.addArrangedSubview(logoImageView)
+        searchStackView.addArrangedSubview(productTextField)
         scrollContent.addSubview(searchProductsButton)
+        scrollContent.addSubview(footerView)
     }
-
+    
     func setupConstraints() {
         scrollView.snp.makeConstraints { make in
             make.left.right.equalTo(safeAreaLayoutGuide)
@@ -99,28 +114,41 @@ extension SearchView: ViewCodeProtocol {
             make.top.bottom.equalToSuperview()
         }
         
+        searchStackView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.right.equalToSuperview()
+            make.left.equalToSuperview()
+        }
+        
         logoImageView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).offset(80)
+            make.top.equalToSuperview().offset(80)
             make.centerX.equalToSuperview()
             make.height.equalTo(200)
             make.width.equalTo(200)
         }
         
         productTextField.snp.makeConstraints { make in
-            make.top.equalTo(logoImageView.snp.bottom).offset(48)
-            make.left.equalTo(safeAreaLayoutGuide).offset(50)
-            make.right.equalTo(safeAreaLayoutGuide).inset(50)
+            make.left.equalToSuperview().offset(50)
+            make.right.equalToSuperview().inset(50)
             make.height.equalTo(50)
         }
         
         searchProductsButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide).inset(50)
-            make.left.equalTo(safeAreaLayoutGuide).offset(50)
-            make.right.equalTo(safeAreaLayoutGuide).inset(50)
+            make.top.equalTo(searchStackView.snp.bottom).offset(40)
+            make.left.equalToSuperview().offset(50)
+            make.right.equalToSuperview().inset(50)
+            make.height.equalTo(50)
+        }
+        
+        footerView.snp.makeConstraints { make in
+            make.top.equalTo(searchProductsButton.snp.bottom).offset(20)
+            make.bottom.equalToSuperview().offset(50)
+            make.left.equalToSuperview().offset(50)
+            make.right.equalToSuperview().inset(50)
             make.height.equalTo(50)
         }
     }
-
+    
     func setupComponents() {
         backgroundColor = .systemBackground
         
