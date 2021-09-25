@@ -49,6 +49,7 @@
 		7020A6F426FFDC2200D5DCFE /* MLAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A6F326FFDC2200D5DCFE /* MLAlertViewController.swift */; };
 		7020A6F726FFDDAE00D5DCFE /* MLEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A6F626FFDDAE00D5DCFE /* MLEmptyStateView.swift */; };
 		7020A6F926FFE15A00D5DCFE /* 64018-searching-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 7020A6F826FFE15A00D5DCFE /* 64018-searching-data.json */; };
+		7020A6FB26FFE20B00D5DCFE /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A6FA26FFE20B00D5DCFE /* UIViewController+Ext.swift */; };
 		D9F5DE3807CDBAB5D4789F3A /* Pods_Teste_MLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17598219604D5012A395F28 /* Pods_Teste_MLTests.framework */; };
 		E345817179BC821FEA57B158 /* Pods_Teste_ML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC280353E83677807CD5B815 /* Pods_Teste_ML.framework */; };
 /* End PBXBuildFile section */
@@ -122,6 +123,7 @@
 		7020A6F326FFDC2200D5DCFE /* MLAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLAlertViewController.swift; sourceTree = "<group>"; };
 		7020A6F626FFDDAE00D5DCFE /* MLEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLEmptyStateView.swift; sourceTree = "<group>"; };
 		7020A6F826FFE15A00D5DCFE /* 64018-searching-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "64018-searching-data.json"; sourceTree = "<group>"; };
+		7020A6FA26FFE20B00D5DCFE /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		AC280353E83677807CD5B815 /* Pods_Teste_ML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teste_ML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB48D39BDA79D291262C6AE /* Pods-Teste_ML-Teste_MLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste_ML-Teste_MLUITests.release.xcconfig"; path = "Target Support Files/Pods-Teste_ML-Teste_MLUITests/Pods-Teste_ML-Teste_MLUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C17598219604D5012A395F28 /* Pods_Teste_MLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teste_MLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -352,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				7020A6D526FFC8C000D5DCFE /* UIImageView+Ext.swift */,
+				7020A6FA26FFE20B00D5DCFE /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				7020A6ED26FFDAF300D5DCFE /* MLAlert.swift in Sources */,
 				7020A6C126FFBB4D00D5DCFE /* Constants.swift in Sources */,
 				7020A6AA26FFA61A00D5DCFE /* SearchPresenter.swift in Sources */,
+				7020A6FB26FFE20B00D5DCFE /* UIViewController+Ext.swift in Sources */,
 				7020A6B426FFA6C400D5DCFE /* ViewCodeProtocol.swift in Sources */,
 				7020A6E426FFCD9700D5DCFE /* ProductInfoDetailsViewController.swift in Sources */,
 				7020A6CF26FFC09100D5DCFE /* ProductListView.swift in Sources */,
