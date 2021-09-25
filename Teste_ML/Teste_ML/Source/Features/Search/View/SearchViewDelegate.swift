@@ -9,5 +9,5 @@ import Foundation
 
 protocol SearchViewDelegate: AnyObject {
 
-    func didDoSomething()
+    func didSelectSearchProductsButton(product: String?)
 }

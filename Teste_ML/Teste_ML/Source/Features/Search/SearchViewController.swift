@@ -52,10 +52,11 @@ class SearchViewController: UIViewController {
 // MARK: - SearchViewDelegate Extension
 
 extension SearchViewController: SearchViewDelegate {
-
-    func didDoSomething() {
-        // Put here your view delegate action
+    
+    func didSelectSearchProductsButton(product: String?) {
+        
     }
+
 }
 
 // MARK: - SearchViewControllerProtocol Extension
