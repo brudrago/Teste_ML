@@ -42,10 +42,6 @@ class ProductListView: UIView {
         self.products = products
         tableView.reloadData()
     }
-
-    // MARK: - Private Functions
-
-    // Put here your private functions
 }
 
 // MARK: - ViewCodeProtocol Extension
@@ -94,8 +90,8 @@ extension  ProductListView: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? CardProductsCell
         else { return UITableViewCell() }
        
-      //  cell.set(product: products[indexPath.row])
         cell.setList(product: products[indexPath.row])
+        cell.selectionStyle = .none
        
         return cell
     }

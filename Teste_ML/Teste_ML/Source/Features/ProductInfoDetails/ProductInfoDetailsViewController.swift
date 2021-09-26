@@ -9,7 +9,12 @@ import UIKit
 
 protocol ProductInfoDetailsViewControllerProtocol: AnyObject {
 
-    // Put here your protocol
+    func set(product: APIResponse)
+    
+    func showDetails(for url: String)
+    
+    func showAlert(title: String, message: String, buttonTitle: String)
+    
 }
 
 class ProductInfoDetailsViewController: UIViewController {
@@ -39,12 +44,15 @@ class ProductInfoDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        interactor.setData()
     }
 
     // MARK: - Public Functions
 
-    // Put here your public functions
-
+    func showAlert(title: String, message: String, buttonTitle: String) {
+        presentAlertOnMainThread(title: title , message: message, buttonTitle: buttonTitle)
+    }
+    
     // MARK: - Private Functions
 
     // Put here your private functions
@@ -54,11 +62,20 @@ class ProductInfoDetailsViewController: UIViewController {
 
 extension ProductInfoDetailsViewController: ProductInfoDetailsViewDelegate {
     
+    func didSelectMoreDetailsButton() {
+        interactor.showDetails()
+    }
 }
 
 // MARK: - ProductInfoDetailsViewControllerProtocol Extension
 
 extension ProductInfoDetailsViewController: ProductInfoDetailsViewControllerProtocol {
     
-    // Put here your protocol
+    func set(product: APIResponse) {
+        productInfoDetailsView.setup(product: product)
+    }
+    
+    func showDetails(for url: String) {
+        presentSafariViewController(with: url)
+    }
 }

@@ -28,11 +28,6 @@ class ProductInfoDetailsView: UIView {
         return stack
     }()
     
-    private lazy var productNameLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
-    
     private lazy var productImageView: UIImageView = {
         let logo = UIImageView()
         logo.image = UIImage(named: "ml-logo")
@@ -40,9 +35,33 @@ class ProductInfoDetailsView: UIView {
         return logo
     }()
     
+    private lazy var productNameLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .secondaryLabel
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.numberOfLines = 0
+        return label
+    }()
+    
     private lazy var detailsLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .secondaryLabel
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.numberOfLines = 0
         return label
+    }()
+    
+    private lazy var moreDetailsButton: UIButton = {
+        let button = MLButton(
+            backgroundColor: .systemYellow,
+            title: K.goToSite)
+        return button
+    } ()
+    
+    private lazy var footerView: UIView = {
+        let footer = UIView(frame: .zero)
+        footer.backgroundColor = .clear
+        return footer
     }()
 
     // MARK: - Private Properties
@@ -64,11 +83,19 @@ class ProductInfoDetailsView: UIView {
 
     // MARK: - Public Functions
 
-    // Put here your public functions
+    func setup(product: APIResponse) {
+        productImageView.load(url: product.thumbnail ?? "")
+        productNameLabel.text = product.title
+        detailsLabel.text = String(product.price ?? 0)
+    }
 
     // MARK: - Private Functions
 
-    // Put here your private functions
+    @objc
+    private func didSelectmoreDetailsButton(_ button: MLButton) {
+        print("Go TO Site")
+        delegate.didSelectMoreDetailsButton()
+    }
 }
 
 // MARK: - ViewCodeProtocol Extension
@@ -76,15 +103,74 @@ class ProductInfoDetailsView: UIView {
 extension ProductInfoDetailsView: ViewCodeProtocol {
 
     func setupSubviews() {
-        // Add your components to view
+       addSubview(scrollView)
+        scrollView.addSubview(scrollContent)
+        scrollContent.addSubview(containerStackView)
+        containerStackView.addArrangedSubview(productImageView)
+        containerStackView.addArrangedSubview(productNameLabel)
+        containerStackView.addArrangedSubview(detailsLabel)
+        scrollContent.addSubview(moreDetailsButton)
+        scrollContent.addSubview(footerView)
     }
 
     func setupConstraints() {
-        // Create components constraints
+        scrollView.snp.makeConstraints { make in
+            make.left.right.equalTo(safeAreaLayoutGuide)
+            make.top.bottom.equalTo(safeAreaLayoutGuide)
+        }
+        
+        scrollContent.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.left.right.equalToSuperview()
+            make.top.bottom.equalToSuperview()
+        }
+        
+        containerStackView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.right.equalToSuperview()
+            make.left.equalToSuperview()
+        }
+        
+        productImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(40)
+            make.right.equalToSuperview().inset(15)
+            make.left.equalToSuperview().offset(15)
+            make.height.equalTo(300)
+        }
+        
+        productNameLabel.snp.makeConstraints { make in
+            make.top.equalTo(productImageView.snp.bottom).offset(20)
+            make.right.equalToSuperview().inset(15)
+            make.left.equalToSuperview().offset(15)
+        }
+        
+        detailsLabel.snp.makeConstraints { make in
+            make.top.equalTo(productNameLabel.snp.bottom).offset(15)
+            make.right.equalToSuperview().inset(15)
+            make.left.equalToSuperview().offset(15)
+        }
+ 
+        moreDetailsButton.snp.makeConstraints { make in
+            make.top.equalTo(containerStackView.snp.bottom).offset(40)
+            make.left.equalToSuperview().offset(50)
+            make.right.equalToSuperview().inset(50)
+            make.height.equalTo(50)
+        }
+        
+        footerView.snp.makeConstraints { make in
+            make.top.equalTo(moreDetailsButton.snp.bottom).offset(20)
+            make.bottom.equalToSuperview().offset(50)
+            make.left.equalToSuperview().offset(50)
+            make.right.equalToSuperview().inset(50)
+            make.height.equalTo(50)
+        }
+        
     }
 
     func setupComponents() {
-        // Set components delegate and defaults preference
-        // E.G.: backgroundColor, registerCellOn, accessibilityIdentifier, addTarget
+        backgroundColor = .systemBackground
+        
+        let moreDetailsButtonButtonAction = #selector(didSelectmoreDetailsButton(_:))
+        moreDetailsButton.addTarget(self, action: moreDetailsButtonButtonAction, for: .touchUpInside)
     }
 }

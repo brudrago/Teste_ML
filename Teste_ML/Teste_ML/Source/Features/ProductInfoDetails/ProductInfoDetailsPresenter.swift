@@ -9,7 +9,11 @@ import Foundation
 
 protocol ProductInfoDetailsPresenterProtocol {
 
-    // Put here your protocol
+    func set(product: APIResponse)
+    
+    func showDetails(for url: String)
+    
+    func showAlert(title: String, message: String, buttonTitle: String)
 }
 
 class ProductInfoDetailsPresenter: ProductInfoDetailsPresenterProtocol {
@@ -18,15 +22,21 @@ class ProductInfoDetailsPresenter: ProductInfoDetailsPresenterProtocol {
 
     weak var viewController: ProductInfoDetailsViewControllerProtocol!
 
-    // MARK: - Private Properties
-    
-    // Put here your private properties
-
     // MARK: - Inits
 
     init() {}
 
     // MARK: - Public Functions
 
-    // Put here your public functions
+    func set(product: APIResponse) {
+        viewController.set(product: product)
+    }
+    
+    func showDetails(for url: String) {
+        viewController.showDetails(for: url)
+    }
+    
+    func showAlert(title: String, message: String, buttonTitle: String) {
+        viewController.showAlert(title: title, message: message, buttonTitle: buttonTitle)
+    }
 }

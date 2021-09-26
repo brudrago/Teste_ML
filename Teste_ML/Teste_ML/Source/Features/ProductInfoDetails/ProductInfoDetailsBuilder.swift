@@ -22,6 +22,7 @@ struct ProductInfoDetailsBuilder {
         interactor.presenter = presenter
         presenter.viewController = viewController
         router.viewController = viewController
+        interactor.product = product
 
         return viewController
     }

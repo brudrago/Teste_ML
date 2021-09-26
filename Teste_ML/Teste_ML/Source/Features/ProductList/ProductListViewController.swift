@@ -28,10 +28,6 @@ class ProductListViewController: UIViewController {
 
     var router: ProductListRouterProtocol!
 
-    // MARK: - Public Properties
-
-    // Put here your public properties
-
     // MARK: - Private Properties
 
     private lazy var productListView: ProductListView = {

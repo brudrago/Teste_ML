@@ -10,4 +10,5 @@ import Foundation
 enum K {
     static let placeholder = "Ex: celular,lápis ..."
     static let search = "Buscar"
+    static let goToSite = "Mais detalhes"
 }

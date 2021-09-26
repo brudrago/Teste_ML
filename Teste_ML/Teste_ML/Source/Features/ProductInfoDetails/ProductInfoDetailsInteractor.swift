@@ -9,7 +9,9 @@ import Foundation
 
 protocol ProductInfoDetailsInteractorProtocol {
 
-    // Put here your protocol
+    func showDetails()
+    
+    func setData()
 }
 
 class ProductInfoDetailsInteractor: ProductInfoDetailsInteractorProtocol {
@@ -18,15 +20,33 @@ class ProductInfoDetailsInteractor: ProductInfoDetailsInteractorProtocol {
 
     var presenter: ProductInfoDetailsPresenterProtocol!
 
-    // MARK: - Private Properties
+    // MARK: - Public Properties
     
-    // Put here your private properties
+    var product: APIResponse!
 
     // MARK: - Inits
 
     init() {}
 
     // MARK: - Public Functions
+    
+    func setData() {
+        presenter.set(product: product)
+    }
 
-    // Put here your public functions
+    func showDetails() {
+        guard let detailsURL = product.permalink else {
+            self.didFetchFailed()
+            return
+        }
+        
+        presenter.showDetails(for: detailsURL)
+    }
+    
+    private func didFetchFailed() {
+        let titleMessage = "Desculpe"
+        let message = "Não foi possível carregar a página"
+        let buttonTitle = "Ok"
+        presenter.showAlert(title: titleMessage, message: message, buttonTitle: buttonTitle)
+    }
 }
