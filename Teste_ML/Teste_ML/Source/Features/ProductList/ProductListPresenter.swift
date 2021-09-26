@@ -53,6 +53,6 @@ class ProductListPresenter: ProductListPresenterProtocol {
     }
     
     func showEmptyState(_ message: String) {
-     //   viewController.showEmptyState(message)
+        viewController.showEmptyState(message)
     }
 }

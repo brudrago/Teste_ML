@@ -8,19 +8,21 @@
 import UIKit
 
 class MLEmptyStateView: UIView {
-
+    
     // MARK: - UI Components
     
     private lazy var messageLabel: MLTitleLabel = {
         let label = MLTitleLabel(textAlignment: .center, fontsize: 28)
         label.numberOfLines = 3
-        label.textColor = .secondaryLabel
+        label.textColor = .black
+        label.textAlignment = .left
         return label
     }()
     
     private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "search-logo")
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -53,17 +55,20 @@ extension MLEmptyStateView: ViewCodeProtocol {
     
     func setupConstraints() {
         messageLabel.snp.makeConstraints { make in
-            make.centerY.equalToSuperview().offset(-150)
-            make.left.equalToSuperview().offset(40)
-            make.right.equalToSuperview().inset(40)
-            make.height.equalTo(200)
+            make.top.equalToSuperview().offset(80)
+            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().inset(20)
+            make.height.equalTo(100)
         }
         
         logoImageView.snp.makeConstraints { make in
-            make.width.equalToSuperview().multipliedBy(1.3)
-            make.height.equalTo(logoImageView.snp.width).multipliedBy(1.3)
-            make.left.equalToSuperview().offset(100)
-            make.bottom.equalToSuperview().inset(-40)
+            make.top.equalTo(messageLabel.snp.bottom).offset(40)
+            make.left.bottom.equalToSuperview().offset(20)
+            make.right.equalToSuperview().inset(20)
         }
+    }
+    
+    func setupComponents() {
+        backgroundColor = .systemBackground
     }
 }
