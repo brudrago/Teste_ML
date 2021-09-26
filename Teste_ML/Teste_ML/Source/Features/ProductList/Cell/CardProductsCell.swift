@@ -24,8 +24,8 @@ class CardProductsCell: UITableViewCell {
     
     private var productImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
-        imageView.image = UIImage(named: "mercado-livre")
+        imageView.contentMode = .scaleAspectFill
+      //  imageView.image = UIImage(named: "mercado-livre")
         return imageView
     }()
     
@@ -41,7 +41,7 @@ class CardProductsCell: UITableViewCell {
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.numberOfLines = 0
-        label.textColor = .white
+        label.textColor = .blue
         return label
     }()
     
@@ -69,7 +69,12 @@ class CardProductsCell: UITableViewCell {
     
     func set(product: ProductViewModel) {
         productNameLabel.text = product.title
-        productImageView.load(url: product.thumbnail)
+       // productImageView.load(url: product.thumbnail)
+    }
+    
+    func setList(product: APIResponse) {
+        productNameLabel.text = product.title
+        productImageView.load(url: product.thumbnail ?? "")
     }
 
 }

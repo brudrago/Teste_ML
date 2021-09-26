@@ -21,8 +21,6 @@ class ProductWorker: ProductWorkerProtocol {
             .set(product: product)
             .build()
         
-        print("=====URL:\(url)")
-        
         requestProducts(url, completion: completion)
     }
     

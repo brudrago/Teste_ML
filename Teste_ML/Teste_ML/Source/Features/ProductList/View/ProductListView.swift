@@ -95,6 +95,8 @@ extension  ProductListView: UITableViewDataSource {
         else { return UITableViewCell() }
        
      //   cell.set(product: products[indexPath.row])
+      //  cell.set(product: products[indexPath.row])
+        cell.setList(product: products[indexPath.row])
        
         return cell
     }
