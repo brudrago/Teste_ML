@@ -58,11 +58,11 @@ class ProductListViewController: UIViewController {
     }
     
     func showLoading() {
-        startLoading()
+        showLoadingIndicator()
     }
     
     func dismissLoading() {
-        stopLoading()
+        hideLoading()
     }
     
     func showEmptyState(_ message: String) {

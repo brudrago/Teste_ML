@@ -56,6 +56,7 @@
 		7020A7062700DAD400D5DCFE /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A7052700DAD400D5DCFE /* String+Ext.swift */; };
 		7020A7082700F77100D5DCFE /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A7072700F77100D5DCFE /* APIResponse.swift */; };
 		7020A70A2700F99D00D5DCFE /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A7092700F99D00D5DCFE /* APIModel.swift */; };
+		7020A70F2701305200D5DCFE /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A70E2701305200D5DCFE /* SpinnerView.swift */; };
 		D9F5DE3807CDBAB5D4789F3A /* Pods_Teste_MLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17598219604D5012A395F28 /* Pods_Teste_MLTests.framework */; };
 		E345817179BC821FEA57B158 /* Pods_Teste_ML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC280353E83677807CD5B815 /* Pods_Teste_ML.framework */; };
 /* End PBXBuildFile section */
@@ -136,6 +137,7 @@
 		7020A7052700DAD400D5DCFE /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		7020A7072700F77100D5DCFE /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		7020A7092700F99D00D5DCFE /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		7020A70E2701305200D5DCFE /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		AC280353E83677807CD5B815 /* Pods_Teste_ML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teste_ML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB48D39BDA79D291262C6AE /* Pods-Teste_ML-Teste_MLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste_ML-Teste_MLUITests.release.xcconfig"; path = "Target Support Files/Pods-Teste_ML-Teste_MLUITests/Pods-Teste_ML-Teste_MLUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C17598219604D5012A395F28 /* Pods_Teste_MLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teste_MLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -435,6 +437,7 @@
 		7020A6F526FFDD8E00D5DCFE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7020A70E2701305200D5DCFE /* SpinnerView.swift */,
 				7020A6F626FFDDAE00D5DCFE /* MLEmptyStateView.swift */,
 			);
 			path = View;
@@ -739,6 +742,7 @@
 				7020A6CC26FFC09100D5DCFE /* ProductListViewController.swift in Sources */,
 				7020A6FF2700B4E400D5DCFE /* MLError.swift in Sources */,
 				7020A7022700B69900D5DCFE /* ProductsWorker.swift in Sources */,
+				7020A70F2701305200D5DCFE /* SpinnerView.swift in Sources */,
 				7020A67126FFA38800D5DCFE /* SceneDelegate.swift in Sources */,
 				7020A6E326FFCD9700D5DCFE /* ProductInfoDetailsRouter.swift in Sources */,
 				7020A6FD2700B49500D5DCFE /* NetworkManager.swift in Sources */,
