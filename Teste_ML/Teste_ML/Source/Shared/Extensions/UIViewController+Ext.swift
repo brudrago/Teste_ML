@@ -34,39 +34,6 @@ extension UIViewController {
         present(safariViewController, animated: true)
     }
     
-    func startLoading() {
-        containerView = UIView(frame: view.bounds)
-        view.addSubview(containerView)
-        
-        containerView.backgroundColor = .systemBackground
-        containerView.alpha = 0
-        
-        UIView.animate(withDuration: 0.25) {
-            containerView.alpha = 0.8
-        }
-        
-        let activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.color = .systemYellow
-        
-        containerView.addSubview(activityIndicator)
-        
-        activityIndicator.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.centerX.equalToSuperview()
-        }
-        
-        activityIndicator.startAnimating()
-    }
-    
-    func stopLoading() {
-        DispatchQueue.main.async {
-            containerView.removeFromSuperview()
-            containerView = nil
-        }
-    }
-    
-    
-    
     func showLoadingIndicator() {
         if self.view.viewWithTag(1000) != nil {
             return
@@ -74,7 +41,7 @@ extension UIViewController {
         
         let loadingView = UIView()
         loadingView.frame = view.bounds
-        loadingView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        loadingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         loadingView.backgroundColor = UIColor.white.withAlphaComponent(0.75)
         loadingView.layer.zPosition = 10
         loadingView.tag = 1000
@@ -94,7 +61,7 @@ extension UIViewController {
     
     func hideLoading() {
         let seconds = 0.7
-        let delay = seconds * Double(NSEC_PER_SEC)  // nanoseconds per seconds
+        let delay = seconds * Double(NSEC_PER_SEC) 
         let dispatchTime = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
         
         DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
