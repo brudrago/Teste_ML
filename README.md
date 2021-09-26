@@ -14,7 +14,7 @@
 # Executando
 * Instale o CocoaPods sudo gem install cocoapods
 * Execute pod install 
-* Use o xCode 11+ para abrir o projeto pelo arquivo FollowersViewCode.xcworkspace.
+* Use o xCode 11+ para abrir o projeto pelo arquivo Teste_ML.xcworkspace.
 * ▶️
 
 
