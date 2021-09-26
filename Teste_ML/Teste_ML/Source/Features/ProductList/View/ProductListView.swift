@@ -76,7 +76,7 @@ extension ProductListView: ViewCodeProtocol {
 extension  ProductListView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 200
     }
 }
 
@@ -94,7 +94,6 @@ extension  ProductListView: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? CardProductsCell
         else { return UITableViewCell() }
        
-     //   cell.set(product: products[indexPath.row])
       //  cell.set(product: products[indexPath.row])
         cell.setList(product: products[indexPath.row])
        
@@ -103,6 +102,6 @@ extension  ProductListView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let itemSelected = products[indexPath.row]
-     //   delegate.didSelectProduct(product: itemSelected)
+        delegate?.didSelectProduct(product: itemSelected)
     }
 }

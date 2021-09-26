@@ -24,8 +24,7 @@ class CardProductsCell: UITableViewCell {
     
     private var productImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-      //  imageView.image = UIImage(named: "mercado-livre")
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -39,18 +38,18 @@ class CardProductsCell: UITableViewCell {
     private var productNameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.numberOfLines = 0
-        label.textColor = .blue
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.numberOfLines = 2
+        label.textColor = .systemYellow
         return label
     }()
     
     private var priceLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         label.numberOfLines = 0
-        label.textColor = .white
+        label.textColor = .systemYellow
         return label
     }()
 
@@ -74,6 +73,7 @@ class CardProductsCell: UITableViewCell {
     
     func setList(product: APIResponse) {
         productNameLabel.text = product.title
+        priceLabel.text = String(product.price ?? 0)
         productImageView.load(url: product.thumbnail ?? "")
     }
 
@@ -106,23 +106,11 @@ extension CardProductsCell: ViewCodeProtocol {
         }
         
         itemStackView.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(15)
-            make.right.equalToSuperview().inset(15)
+            make.left.equalToSuperview().offset(5)
+            make.right.equalToSuperview().inset(5)
             make.bottom.equalToSuperview().inset(15)
-            make.height.equalTo(40)
+            make.height.equalTo(80)
         }
-        
-//        productNameLabel.snp.makeConstraints { make in
-//            make.left.equalToSuperview().offset(15)
-//            make.right.equalToSuperview().inset(15)
-//          //  make.bottom.equalToSuperview().inset(15)
-//        }
-//
-//        priceLabel.snp.makeConstraints { make in
-//            make.left.equalToSuperview().offset(15)
-//            make.right.equalToSuperview().inset(15)
-//            make.bottom.equalToSuperview().inset(15)
-//        }
     }
     
     func setupComponents() {

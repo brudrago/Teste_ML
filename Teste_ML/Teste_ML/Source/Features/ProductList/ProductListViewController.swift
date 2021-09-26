@@ -49,6 +49,11 @@ class ProductListViewController: UIViewController {
         super.viewDidLoad()
         interactor.fetchProducts()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigation()
+    }
 
     // MARK: - Public Functions
 
@@ -70,7 +75,10 @@ class ProductListViewController: UIViewController {
 
     // MARK: - Private Functions
 
-    // Put here your private functions
+    private func setupNavigation() {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.prefersLargeTitles = false
+    }
 }
 
 // MARK: - ProductListViewDelegate Extension
@@ -78,7 +86,7 @@ class ProductListViewController: UIViewController {
 extension ProductListViewController: ProductListViewDelegate {
     
     func didSelectProduct(product: APIResponse) {
-        
+        router.proceedToProductInfoDetails(product: product)
     }
 }
 
