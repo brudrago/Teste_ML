@@ -26,10 +26,6 @@ class ProductListPresenter: ProductListPresenterProtocol {
 
     weak var viewController: ProductListViewControllerProtocol!
 
-    // MARK: - Private Properties
-    
-    // Put here your private properties
-
     // MARK: - Inits
 
     init() {}
@@ -45,11 +41,11 @@ class ProductListPresenter: ProductListPresenterProtocol {
     }
     
     func showLoading() {
-      //  viewController.showLoading()
+        viewController.showLoading()
     }
     
     func dismissLoading() {
-      //  viewController.dismissLoading()
+        viewController.dismissLoading()
     }
     
     func showEmptyState(_ message: String) {

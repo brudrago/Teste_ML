@@ -8,6 +8,8 @@
 import UIKit
 import SafariServices
 
+fileprivate var containerView: UIView!
+
 extension UIViewController {
     
     func  presentAlertOnMainThread(title: String, message: String, buttonTitle: String) {
@@ -30,5 +32,36 @@ extension UIViewController {
         let safariViewController = SFSafariViewController(url: newURL)
         safariViewController.preferredControlTintColor = .systemYellow
         present(safariViewController, animated: true)
+    }
+    
+    func startLoading() {
+        containerView = UIView(frame: view.bounds)
+        view.addSubview(containerView)
+        
+        containerView.backgroundColor = .systemBackground
+        containerView.alpha = 0
+        
+        UIView.animate(withDuration: 0.25) {
+            containerView.alpha = 0.8
+        }
+        
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .systemYellow
+        
+        containerView.addSubview(activityIndicator)
+        
+        activityIndicator.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.centerX.equalToSuperview()
+        }
+        
+        activityIndicator.startAnimating()
+    }
+    
+    func stopLoading() {
+        DispatchQueue.main.async {
+            containerView.removeFromSuperview()
+            containerView = nil
+        }
     }
 }
