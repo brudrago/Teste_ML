@@ -11,7 +11,7 @@ protocol SearchPresenterProtocol {
     
     func showAlert(title: String, message: String, buttonTitle: String)
     
-    func searchsearchForProducts()
+    func searchForProducts()
 }
 
 class SearchPresenter: SearchPresenterProtocol {
@@ -30,7 +30,7 @@ class SearchPresenter: SearchPresenterProtocol {
         viewController.showAlert(title: title, message: message, buttonTitle: buttonTitle)
     }
     
-    func searchsearchForProducts() {
+    func searchForProducts() {
         viewController.searchForProducts()
     }
 }

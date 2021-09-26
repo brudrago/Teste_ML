@@ -9,7 +9,15 @@ import Foundation
 
 protocol ProductListPresenterProtocol {
 
-    // Put here your protocol
+    func set(products: [Products])
+    
+    func showAlert(title: String, message: String, buttonTitle: String)
+    
+    func showLoading()
+    
+    func dismissLoading()
+    
+    func showEmptyState(_ message: String)
 }
 
 class ProductListPresenter: ProductListPresenterProtocol {
@@ -27,6 +35,24 @@ class ProductListPresenter: ProductListPresenterProtocol {
     init() {}
 
     // MARK: - Public Functions
+    
+    func set(products: [Products]) {
+        viewController.set(products: products)
+    }
 
-    // Put here your public functions
+    func showAlert(title: String, message: String, buttonTitle: String) {
+        viewController.showAlert(title: title, message: message, buttonTitle: buttonTitle)
+    }
+    
+    func showLoading() {
+      //  viewController.showLoading()
+    }
+    
+    func dismissLoading() {
+      //  viewController.dismissLoading()
+    }
+    
+    func showEmptyState(_ message: String) {
+     //   viewController.showEmptyState(message)
+    }
 }

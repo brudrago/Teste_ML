@@ -18,8 +18,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         window.makeKeyAndVisible()
-        window.rootViewController = SearchViewController()
+        window.rootViewController = createSearchNavigationController()
         self.window = window
+        
+        configureNavigationBar()
+    }
+    
+    func configureNavigationBar() {
+        UINavigationBar.appearance().tintColor = .systemYellow
+    }
+    
+    func createSearchNavigationController() -> UINavigationController {
+        let searchVC        = SearchBuilder.build()
+        searchVC.title      = "Search"
+        
+        return UINavigationController(rootViewController: searchVC)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

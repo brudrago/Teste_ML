@@ -58,7 +58,7 @@ class SearchView: UIView {
     
     // MARK: - Private Properties
     
-    private unowned let delegate: SearchViewDelegate
+    weak var delegate: SearchViewDelegate?
     
     // MARK: - Inits
     
@@ -82,9 +82,10 @@ class SearchView: UIView {
     // MARK: - Private Functions
     
     @objc
-    private func didSelecSearchProductButton(_ button: MLButton) {
-        let product = productTextField.text
-        delegate.didSelectSearchProductsButton(product: product)
+    private func didSelectSearchProductButton(_ button: MLButton) {
+        guard let product = productTextField.text else { return }
+        print("=====PRODUCT: \(product)")
+        delegate?.didSelectSearchProductsButton(product: product)
     }
 }
 
@@ -152,7 +153,7 @@ extension SearchView: ViewCodeProtocol {
     func setupComponents() {
         backgroundColor = .systemBackground
         
-        let searchProductButtonAction = #selector(didSelecSearchProductButton(_:))
+        let searchProductButtonAction = #selector(didSelectSearchProductButton(_:))
         searchProductsButton.addTarget(self, action: searchProductButtonAction, for: .touchUpInside)
     }
 }
@@ -163,7 +164,7 @@ extension SearchView: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let product = productTextField.text
-        delegate.didSelectSearchProductsButton(product: product)
+        delegate?.didSelectSearchProductsButton(product: product)
         textField.resignFirstResponder()
         textField.text?.removeAll()
         return true

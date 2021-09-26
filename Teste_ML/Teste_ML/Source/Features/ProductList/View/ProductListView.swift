@@ -19,9 +19,9 @@ class ProductListView: UIView {
     
     // MARK: - Private Properties
 
-    private unowned let delegate: ProductListViewDelegate
+    weak var delegate: ProductListViewDelegate?
     
-    private var products:[ProductListResponse] = []
+    private var products:[Products] = []
 
     // MARK: - Inits
 
@@ -38,7 +38,10 @@ class ProductListView: UIView {
 
     // MARK: - Public Functions
 
-    // Put here your public functions
+    func set(products: [Products]) {
+        self.products = products
+        tableView.reloadData()
+    }
 
     // MARK: - Private Functions
 
@@ -91,13 +94,13 @@ extension  ProductListView: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? CardProductsCell
         else { return UITableViewCell() }
        
-        cell.set(product: products[indexPath.row])
+     //   cell.set(product: products[indexPath.row])
        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let itemSelected = products[indexPath.row]
-        delegate.didSelectProduct(product: itemSelected)
+     //   delegate.didSelectProduct(product: itemSelected)
     }
 }

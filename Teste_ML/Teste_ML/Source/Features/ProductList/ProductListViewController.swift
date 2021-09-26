@@ -9,7 +9,15 @@ import UIKit
 
 protocol ProductListViewControllerProtocol: AnyObject {
 
-    // Put here your protocol
+    func set(products: [Products])
+    
+    func showAlert(title: String, message: String, buttonTitle: String)
+    
+    func showLoading()
+    
+    func dismissLoading()
+    
+    func showEmptyState(_ message: String)
 }
 
 class ProductListViewController: UIViewController {
@@ -39,11 +47,26 @@ class ProductListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        interactor.fetchProducts()
     }
 
     // MARK: - Public Functions
 
-    // Put here your public functions
+    func showAlert(title: String, message: String, buttonTitle: String) {
+        presentAlertOnMainThread(title: title , message: message, buttonTitle: buttonTitle)
+    }
+    
+    func showLoading() {
+      //  startLoading()
+    }
+    
+    func dismissLoading() {
+      //  stopLoading()
+    }
+    
+    func showEmptyState(_ message: String) {
+        showEmptyStateView(with: message, in: self.view)
+    }
 
     // MARK: - Private Functions
 
@@ -63,5 +86,7 @@ extension ProductListViewController: ProductListViewDelegate {
 
 extension ProductListViewController: ProductListViewControllerProtocol {
     
-    // Put here your protocol
+    func set(products: [Products]) {
+        productListView.set(products: products)
+    }
 }

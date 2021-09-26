@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias ProductResult = (Result<ProductListResponse?,MLError>) -> Void
+typealias ProductResult = (Result<[Results]?,MLError>) -> Void
 
 protocol ProductWorkerProtocol {
     
@@ -17,7 +17,11 @@ protocol ProductWorkerProtocol {
 class ProductWorker: ProductWorkerProtocol {
     
     func fetchList(for product: String, completion: @escaping ProductResult) {
-        let url = ""
+        let url = URLBuilder()
+            .set(product: product)
+            .build()
+        
+        print("=====URL:\(url)")
         
         requestProducts(url, completion: completion)
     }

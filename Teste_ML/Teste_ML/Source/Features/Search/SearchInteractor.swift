@@ -34,9 +34,12 @@ class SearchInteractor: SearchInteractorProtocol, SearchDataStoreProtocol {
     // MARK: - Public Functions
 
     func validate(_ product: String) {
+        print("====productInteractor1:\(product)")
         guard validate(product) else { return }
+        print("====productInteractor2:\(product)")
         self.product = product
-        presenter.searchsearchForProducts()
+        print("====productInteractor3:\(product)")
+        presenter.searchForProducts()
     }
  
     //MARK: - Private Functions
@@ -63,8 +66,8 @@ class SearchInteractor: SearchInteractorProtocol, SearchDataStoreProtocol {
         return true
     }
     
-    private func isProductValid(_ item: String) -> Bool {
-        let product = item
+    private func isProductValid(_ product: String) -> Bool {
+        let product = product
         return product.count > 2
     }
 }

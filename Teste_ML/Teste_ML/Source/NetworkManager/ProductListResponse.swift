@@ -8,8 +8,10 @@
 import Foundation
 
 struct ProductListResponse: Codable {
-    let siteID, countryDefaultTimeZone, query: String
-    let paging: Paging
+    let siteID: String?
+    let countryDefaultTimeZone: String?
+    let query: String?
+    let paging: Paging?
     
     enum CodingKeys: String, CodingKey {
         case siteID = "site_id"

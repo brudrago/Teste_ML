@@ -53,6 +53,8 @@
 		7020A6FD2700B49500D5DCFE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A6FC2700B49500D5DCFE /* NetworkManager.swift */; };
 		7020A6FF2700B4E400D5DCFE /* MLError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A6FE2700B4E400D5DCFE /* MLError.swift */; };
 		7020A7022700B69900D5DCFE /* ProductsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A7012700B69900D5DCFE /* ProductsWorker.swift */; };
+		7020A7042700D59B00D5DCFE /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A7032700D59B00D5DCFE /* URLBuilder.swift */; };
+		7020A7062700DAD400D5DCFE /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A7052700DAD400D5DCFE /* String+Ext.swift */; };
 		D9F5DE3807CDBAB5D4789F3A /* Pods_Teste_MLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17598219604D5012A395F28 /* Pods_Teste_MLTests.framework */; };
 		E345817179BC821FEA57B158 /* Pods_Teste_ML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC280353E83677807CD5B815 /* Pods_Teste_ML.framework */; };
 /* End PBXBuildFile section */
@@ -130,6 +132,8 @@
 		7020A6FC2700B49500D5DCFE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7020A6FE2700B4E400D5DCFE /* MLError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLError.swift; sourceTree = "<group>"; };
 		7020A7012700B69900D5DCFE /* ProductsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsWorker.swift; sourceTree = "<group>"; };
+		7020A7032700D59B00D5DCFE /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
+		7020A7052700DAD400D5DCFE /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		AC280353E83677807CD5B815 /* Pods_Teste_ML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teste_ML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB48D39BDA79D291262C6AE /* Pods-Teste_ML-Teste_MLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste_ML-Teste_MLUITests.release.xcconfig"; path = "Target Support Files/Pods-Teste_ML-Teste_MLUITests/Pods-Teste_ML-Teste_MLUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C17598219604D5012A395F28 /* Pods_Teste_MLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teste_MLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -363,6 +367,7 @@
 			children = (
 				7020A6D526FFC8C000D5DCFE /* UIImageView+Ext.swift */,
 				7020A6FA26FFE20B00D5DCFE /* UIViewController+Ext.swift */,
+				7020A7052700DAD400D5DCFE /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 			children = (
 				7020A6D826FFC9D800D5DCFE /* ProductListResponse.swift */,
 				7020A6FC2700B49500D5DCFE /* NetworkManager.swift */,
+				7020A7032700D59B00D5DCFE /* URLBuilder.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -707,6 +713,7 @@
 				7020A6E526FFCD9700D5DCFE /* ProductInfoDetailsBuilder.swift in Sources */,
 				7020A6D626FFC8C000D5DCFE /* UIImageView+Ext.swift in Sources */,
 				7020A6AC26FFA61A00D5DCFE /* SearchViewController.swift in Sources */,
+				7020A7042700D59B00D5DCFE /* URLBuilder.swift in Sources */,
 				7020A6AB26FFA61A00D5DCFE /* SearchRouter.swift in Sources */,
 				7020A6CA26FFC09100D5DCFE /* ProductListPresenter.swift in Sources */,
 				7020A6D026FFC09100D5DCFE /* ProductListViewDelegate.swift in Sources */,
@@ -726,6 +733,7 @@
 				7020A6FD2700B49500D5DCFE /* NetworkManager.swift in Sources */,
 				7020A6AF26FFA61A00D5DCFE /* SearchView.swift in Sources */,
 				7020A6F226FFDBB600D5DCFE /* MLBodyLabel.swift in Sources */,
+				7020A7062700DAD400D5DCFE /* String+Ext.swift in Sources */,
 				7020A6BE26FFAB6C00D5DCFE /* MLButton.swift in Sources */,
 				7020A6D326FFC6C900D5DCFE /* CardProductsCell.swift in Sources */,
 				7020A6ED26FFDAF300D5DCFE /* MLAlert.swift in Sources */,

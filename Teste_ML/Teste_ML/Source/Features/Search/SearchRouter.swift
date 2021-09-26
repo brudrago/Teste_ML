@@ -29,6 +29,8 @@ class SearchRouter: SearchRouterProtocol {
 
     func proceedToProductsList() {
         guard let product = dataStore.product else { return }
+        
+        print("====ROUTER:\(product)")
 
         let productListViewController = ProductListBuilder.build(product)
 

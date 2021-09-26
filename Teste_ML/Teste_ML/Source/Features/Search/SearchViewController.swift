@@ -48,11 +48,11 @@ class SearchViewController: UIViewController {
     // MARK: - Public Functions
 
     func showAlert(title: String, message: String, buttonTitle: String) {
-      //  presentFVCAlertOnMainThread(title: title , message: message, buttonTitle: buttonTitle)
+        presentAlertOnMainThread(title: title , message: message, buttonTitle: buttonTitle)
     }
     
     func searchForProducts() {
-      //  router.proceedToFollowerList()
+        router.proceedToProductsList()
     }
     // MARK: - Private Functions
 
@@ -71,13 +71,13 @@ class SearchViewController: UIViewController {
 extension SearchViewController: SearchViewDelegate {
     
     func didSelectSearchProductsButton(product: String?) {
-        
+        guard let item = product else { return }
+        print("====ITEM:\(item)")
+        interactor.validate(item)
     }
-
 }
 
 // MARK: - SearchViewControllerProtocol Extension
 
-extension SearchViewController: SearchViewControllerProtocol {
-    
-}
+extension SearchViewController: SearchViewControllerProtocol {}
+
