@@ -28,11 +28,14 @@ class URLBuilder {
     
     // MARK: - Public Functions
     
-    //======URL:https://api.mercadolibre.com/sites/MLA/search?q=Iphone
+//    Request: https://api.mercadolibre.com/sites/MLA/search?q=Motorola
+//    Params: Motorola
+  
     
     func set(product: String) -> URLBuilder {
-        let params = product.removingSpaces().lowercased() //product.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        self.url += "sites/MLA/search?q=%@\(params)"
+        let params = product.removingSpaces().lowercased()
+//        params.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        self.url += "sites/MLA/search?q=\(params)"
         return self
     }
     

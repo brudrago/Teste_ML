@@ -35,7 +35,6 @@
 		7020A6D026FFC09100D5DCFE /* ProductListViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A6C926FFC09100D5DCFE /* ProductListViewDelegate.swift */; };
 		7020A6D326FFC6C900D5DCFE /* CardProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A6D226FFC6C900D5DCFE /* CardProductsCell.swift */; };
 		7020A6D626FFC8C000D5DCFE /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A6D526FFC8C000D5DCFE /* UIImageView+Ext.swift */; };
-		7020A6D926FFC9D800D5DCFE /* ProductListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A6D826FFC9D800D5DCFE /* ProductListResponse.swift */; };
 		7020A6E226FFCD9700D5DCFE /* ProductInfoDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A6DB26FFCD9700D5DCFE /* ProductInfoDetailsPresenter.swift */; };
 		7020A6E326FFCD9700D5DCFE /* ProductInfoDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A6DC26FFCD9700D5DCFE /* ProductInfoDetailsRouter.swift */; };
 		7020A6E426FFCD9700D5DCFE /* ProductInfoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A6DD26FFCD9700D5DCFE /* ProductInfoDetailsViewController.swift */; };
@@ -55,6 +54,9 @@
 		7020A7022700B69900D5DCFE /* ProductsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A7012700B69900D5DCFE /* ProductsWorker.swift */; };
 		7020A7042700D59B00D5DCFE /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A7032700D59B00D5DCFE /* URLBuilder.swift */; };
 		7020A7062700DAD400D5DCFE /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A7052700DAD400D5DCFE /* String+Ext.swift */; };
+		7020A7082700F77100D5DCFE /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A7072700F77100D5DCFE /* APIResponse.swift */; };
+		7020A70A2700F99D00D5DCFE /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A7092700F99D00D5DCFE /* APIModel.swift */; };
+		7020A70D2700FF3600D5DCFE /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020A70C2700FF3600D5DCFE /* ProductViewModel.swift */; };
 		D9F5DE3807CDBAB5D4789F3A /* Pods_Teste_MLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17598219604D5012A395F28 /* Pods_Teste_MLTests.framework */; };
 		E345817179BC821FEA57B158 /* Pods_Teste_ML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC280353E83677807CD5B815 /* Pods_Teste_ML.framework */; };
 /* End PBXBuildFile section */
@@ -114,7 +116,6 @@
 		7020A6C926FFC09100D5DCFE /* ProductListViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewDelegate.swift; sourceTree = "<group>"; };
 		7020A6D226FFC6C900D5DCFE /* CardProductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProductsCell.swift; sourceTree = "<group>"; };
 		7020A6D526FFC8C000D5DCFE /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
-		7020A6D826FFC9D800D5DCFE /* ProductListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListResponse.swift; sourceTree = "<group>"; };
 		7020A6DB26FFCD9700D5DCFE /* ProductInfoDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoDetailsPresenter.swift; sourceTree = "<group>"; };
 		7020A6DC26FFCD9700D5DCFE /* ProductInfoDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoDetailsRouter.swift; sourceTree = "<group>"; };
 		7020A6DD26FFCD9700D5DCFE /* ProductInfoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoDetailsViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +135,9 @@
 		7020A7012700B69900D5DCFE /* ProductsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsWorker.swift; sourceTree = "<group>"; };
 		7020A7032700D59B00D5DCFE /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		7020A7052700DAD400D5DCFE /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		7020A7072700F77100D5DCFE /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		7020A7092700F99D00D5DCFE /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		7020A70C2700FF3600D5DCFE /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		AC280353E83677807CD5B815 /* Pods_Teste_ML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teste_ML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB48D39BDA79D291262C6AE /* Pods-Teste_ML-Teste_MLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste_ML-Teste_MLUITests.release.xcconfig"; path = "Target Support Files/Pods-Teste_ML-Teste_MLUITests/Pods-Teste_ML-Teste_MLUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C17598219604D5012A395F28 /* Pods_Teste_MLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teste_MLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -349,6 +353,7 @@
 				7020A6C526FFC09100D5DCFE /* ProductListViewController.swift */,
 				7020A6C626FFC09100D5DCFE /* ProductListBuilder.swift */,
 				7020A6C726FFC09100D5DCFE /* ProductListInteractor.swift */,
+				7020A70C2700FF3600D5DCFE /* ProductViewModel.swift */,
 			);
 			path = ProductList;
 			sourceTree = "<group>";
@@ -375,7 +380,7 @@
 		7020A6D726FFC9C200D5DCFE /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
-				7020A6D826FFC9D800D5DCFE /* ProductListResponse.swift */,
+				7020A70B2700FD6D00D5DCFE /* Model */,
 				7020A6FC2700B49500D5DCFE /* NetworkManager.swift */,
 				7020A7032700D59B00D5DCFE /* URLBuilder.swift */,
 			);
@@ -444,6 +449,15 @@
 				7020A7012700B69900D5DCFE /* ProductsWorker.swift */,
 			);
 			path = Worker;
+			sourceTree = "<group>";
+		};
+		7020A70B2700FD6D00D5DCFE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7020A7092700F99D00D5DCFE /* APIModel.swift */,
+				7020A7072700F77100D5DCFE /* APIResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C91958DC3F707F32FC23C4CC /* Pods */ = {
@@ -723,6 +737,7 @@
 				7020A66F26FFA38800D5DCFE /* AppDelegate.swift in Sources */,
 				7020A6CD26FFC09100D5DCFE /* ProductListBuilder.swift in Sources */,
 				7020A6E826FFCD9700D5DCFE /* ProductInfoDetailsViewDelegate.swift in Sources */,
+				7020A70D2700FF3600D5DCFE /* ProductViewModel.swift in Sources */,
 				7020A6CB26FFC09100D5DCFE /* ProductListRouter.swift in Sources */,
 				7020A6B026FFA61A00D5DCFE /* SearchViewDelegate.swift in Sources */,
 				7020A6CC26FFC09100D5DCFE /* ProductListViewController.swift in Sources */,
@@ -731,6 +746,7 @@
 				7020A67126FFA38800D5DCFE /* SceneDelegate.swift in Sources */,
 				7020A6E326FFCD9700D5DCFE /* ProductInfoDetailsRouter.swift in Sources */,
 				7020A6FD2700B49500D5DCFE /* NetworkManager.swift in Sources */,
+				7020A70A2700F99D00D5DCFE /* APIModel.swift in Sources */,
 				7020A6AF26FFA61A00D5DCFE /* SearchView.swift in Sources */,
 				7020A6F226FFDBB600D5DCFE /* MLBodyLabel.swift in Sources */,
 				7020A7062700DAD400D5DCFE /* String+Ext.swift in Sources */,
@@ -743,8 +759,8 @@
 				7020A6B426FFA6C400D5DCFE /* ViewCodeProtocol.swift in Sources */,
 				7020A6E426FFCD9700D5DCFE /* ProductInfoDetailsViewController.swift in Sources */,
 				7020A6CF26FFC09100D5DCFE /* ProductListView.swift in Sources */,
+				7020A7082700F77100D5DCFE /* APIResponse.swift in Sources */,
 				7020A6CE26FFC09100D5DCFE /* ProductListInteractor.swift in Sources */,
-				7020A6D926FFC9D800D5DCFE /* ProductListResponse.swift in Sources */,
 				7020A6BB26FFAB1D00D5DCFE /* MLTextField.swift in Sources */,
 				7020A6AD26FFA61A00D5DCFE /* SearchBuilder.swift in Sources */,
 				7020A6AE26FFA61A00D5DCFE /* SearchInteractor.swift in Sources */,

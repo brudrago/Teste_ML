@@ -9,5 +9,5 @@ import Foundation
 
 protocol ProductListViewDelegate: AnyObject {
 
-    func didSelectProduct(product:ProductListResponse)
+    func didSelectProduct(product:APIResponse)
 }

@@ -9,7 +9,7 @@ import Foundation
 
 protocol ProductListPresenterProtocol {
 
-    func set(products: [Products])
+    func set(products: [APIResponse])
     
     func showAlert(title: String, message: String, buttonTitle: String)
     
@@ -36,7 +36,7 @@ class ProductListPresenter: ProductListPresenterProtocol {
 
     // MARK: - Public Functions
     
-    func set(products: [Products]) {
+    func set(products: [APIResponse]) {
         viewController.set(products: products)
     }
 

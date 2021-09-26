@@ -26,7 +26,7 @@ class ProductListInteractor: ProductListInteractorProtocol {
     
     private var productWorker: ProductWorkerProtocol
     
-    private var productList: [Products] = []
+    private var productList: [APIResponse] = []
     
     // MARK: - Inits
     
@@ -45,35 +45,33 @@ class ProductListInteractor: ProductListInteractorProtocol {
         productWorker.fetchList(for: product) { [weak self] result in
             guard let self = self else { return }
             
-           // self.presenter.dismissLoading()
+            // self.presenter.dismissLoading()
             
             switch result {
             case .success(let response):
-                self.didFetchSuccess(response)
-            case .failure:
-                self.didFetchFailed()
+                self.didFetchProducts(response)
+            case .failure(let error):
+                self.didFetchFailed(error)
             }
         }
     }
     
     //MARK: - Private Functions
     
-    private func didFetchSuccess(_ response: [Results]?) {
-        guard let results = response else { return }
-        print("===== RESPONSE: \(response)")
-//        for produtcs in results{
-//            self.productList.append(contentsOf: produtcs)
-//        }
+    private func didFetchProducts(_ response: APIModel?) {
+        let products = response?.results ?? []
+        self.productList = products
         
-        if results.isEmpty {
+        if products.isEmpty {
             DispatchQueue.main.async { self.didFetchEmptyState() }
             return
         }
         
-      //  presenter.set(products: )
+        presenter.set(products: products)
     }
     
-    private func didFetchFailed(){
+    private func didFetchFailed(_ error: Error){
+        print(error.localizedDescription)
         let titleMessage = "Desculpe"
         let message = "Um erro ocorreu"
         let buttonTitle = "Ok"

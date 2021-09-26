@@ -9,7 +9,7 @@ import Foundation
 
 protocol ProductListRouterProtocol {
 
-    func proceedToProductInfoDetails(product: ProductListResponse)
+    func proceedToProductInfoDetails(product: APIResponse)
 }
 
 class ProductListRouter: ProductListRouterProtocol {
@@ -20,7 +20,7 @@ class ProductListRouter: ProductListRouterProtocol {
 
     // MARK: - Public Functions
 
-    func proceedToProductInfoDetails(product: ProductListResponse) {
+    func proceedToProductInfoDetails(product: APIResponse) {
         let productInfoDetailsViewController = ProductInfoDetailsBuilder.build(product: product)
 
         viewController.navigationController?

@@ -21,7 +21,7 @@ class ProductListView: UIView {
 
     weak var delegate: ProductListViewDelegate?
     
-    private var products:[Products] = []
+    private var products:[APIResponse] = []
 
     // MARK: - Inits
 
@@ -38,7 +38,7 @@ class ProductListView: UIView {
 
     // MARK: - Public Functions
 
-    func set(products: [Products]) {
+    func set(products: [APIResponse]) {
         self.products = products
         tableView.reloadData()
     }

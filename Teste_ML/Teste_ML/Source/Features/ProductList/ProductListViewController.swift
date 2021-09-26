@@ -9,7 +9,7 @@ import UIKit
 
 protocol ProductListViewControllerProtocol: AnyObject {
 
-    func set(products: [Products])
+    func set(products: [APIResponse])
     
     func showAlert(title: String, message: String, buttonTitle: String)
     
@@ -77,7 +77,7 @@ class ProductListViewController: UIViewController {
 
 extension ProductListViewController: ProductListViewDelegate {
     
-    func didSelectProduct(product: ProductListResponse) {
+    func didSelectProduct(product: APIResponse) {
         
     }
 }
@@ -86,7 +86,7 @@ extension ProductListViewController: ProductListViewDelegate {
 
 extension ProductListViewController: ProductListViewControllerProtocol {
     
-    func set(products: [Products]) {
+    func set(products: [APIResponse]) {
         productListView.set(products: products)
     }
 }

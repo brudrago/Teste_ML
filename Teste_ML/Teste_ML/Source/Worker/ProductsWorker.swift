@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias ProductResult = (Result<[Results]?,MLError>) -> Void
+typealias ProductResult = (Result<APIModel?,MLError>) -> Void
 
 protocol ProductWorkerProtocol {
     

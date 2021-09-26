@@ -67,9 +67,9 @@ class CardProductsCell: UITableViewCell {
     
     // MARK: - Public Function
     
-    func set(product: ProductListResponse) {
-//        productNameLabel.text = product.name
-//        productImageView.load(url: product.coverImage)
+    func set(product: ProductViewModel) {
+        productNameLabel.text = product.title
+        productImageView.load(url: product.thumbnail)
     }
 
 }

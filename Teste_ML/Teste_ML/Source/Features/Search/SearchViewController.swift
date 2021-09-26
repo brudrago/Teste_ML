@@ -72,7 +72,6 @@ extension SearchViewController: SearchViewDelegate {
     
     func didSelectSearchProductsButton(product: String?) {
         guard let item = product else { return }
-        print("====ITEM:\(item)")
         interactor.validate(item)
     }
 }
