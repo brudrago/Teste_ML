@@ -13,4 +13,8 @@ extension String {
 
         return self.replacingOccurrences(of: " ", with: "")
     }
+    
+    public var moneyFormat: String {
+        return "$\(self.replacingOccurrences(of: ".", with: ","))"
+    }
 }

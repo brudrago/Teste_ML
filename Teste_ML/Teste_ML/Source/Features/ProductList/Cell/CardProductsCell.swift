@@ -66,14 +66,9 @@ class CardProductsCell: UITableViewCell {
     
     // MARK: - Public Function
     
-    func set(product: ProductViewModel) {
-        productNameLabel.text = product.title
-       // productImageView.load(url: product.thumbnail)
-    }
-    
     func setList(product: APIResponse) {
         productNameLabel.text = product.title
-        priceLabel.text = String(product.price ?? 0)
+        priceLabel.text = String(product.price ?? 0).moneyFormat
         productImageView.load(url: product.thumbnail ?? "")
     }
 

@@ -31,7 +31,7 @@ class ProductInfoDetailsView: UIView {
     private lazy var productImageView: UIImageView = {
         let logo = UIImageView()
         logo.image = UIImage(named: "ml-logo")
-        logo.contentMode = .scaleToFill
+        logo.contentMode = .scaleAspectFit
         return logo
     }()
     
@@ -45,7 +45,7 @@ class ProductInfoDetailsView: UIView {
     
     private lazy var detailsLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .secondaryLabel
+        label.textColor = .tertiaryLabel
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.numberOfLines = 0
         return label
@@ -86,14 +86,13 @@ class ProductInfoDetailsView: UIView {
     func setup(product: APIResponse) {
         productImageView.load(url: product.thumbnail ?? "")
         productNameLabel.text = product.title
-        detailsLabel.text = String(product.price ?? 0)
+        detailsLabel.text = String(product.price ?? 0).moneyFormat
     }
 
     // MARK: - Private Functions
 
     @objc
     private func didSelectmoreDetailsButton(_ button: MLButton) {
-        print("Go TO Site")
         delegate.didSelectMoreDetailsButton()
     }
 }
