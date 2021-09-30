@@ -21,10 +21,6 @@ jobs:
       -  working-directory: Teste_ML/
          run: |
           pod install --repo-update
-          
-          
-      - name: Make executeable
-        run: chmod +x ./test_app.sh   
         
       - name: Testing iOS app
         run: exec ./.github/scripts/test_app.sh
