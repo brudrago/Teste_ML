@@ -12,17 +12,19 @@ jobs:
     runs-on: macOS-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
-        
+        uses: actions/checkout@v2    
       - name: Access PodFile
         run: |
-          cd Teste_ML/
-          
+          cd Teste_ML/   
       - name: Pod Install
         run: |
       -  working-directory: Teste_ML/
          run: |
           pod install --repo-update
+          
+          
+      - name: Make executeable
+        run: chmod +x ./test_app.sh   
         
       - name: Testing iOS app
         run: exec ./.github/scripts/test_app.sh
