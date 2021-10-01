@@ -1,0 +1,26 @@
+name: TestsCI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Testing iOS app
+    runs-on: macOS-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2    
+      - name: Access PodFile
+        run: |
+          cd Teste_ML/   
+      - name: Pod Install
+        run: |
+      -  working-directory: Teste_ML/
+         run: |
+          pod install --repo-update
+        
+      - name: Testing iOS app
+        run: exec ./.github/scripts/test_app.sh
