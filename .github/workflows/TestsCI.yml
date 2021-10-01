@@ -16,7 +16,5 @@ jobs:
       - name: Pod Install
         run: |
           pod install --repo-update
-      - name: Force XCode 12
-        run: sudo xcode-select -switch /Applications/Xcode_12.app
       - name: Testing iOS app
         run: exec ./.github/scripts/test_app.sh
