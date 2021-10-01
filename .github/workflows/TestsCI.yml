@@ -1,4 +1,4 @@
-name: TestsCI
+name: Testing
 
 on:
   push:
@@ -15,6 +15,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Pod Install
         run: |
-        pod install --repo-update
+          pod install --repo-update
       - name: Testing iOS app
         run: exec ./.github/scripts/test_app.sh
