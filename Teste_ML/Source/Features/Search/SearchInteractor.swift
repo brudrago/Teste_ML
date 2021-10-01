@@ -43,7 +43,7 @@ class SearchInteractor: SearchInteractorProtocol, SearchDataStoreProtocol {
 
    private func validate(_ product: String) -> Bool {
     let isProductNameEmpty = product.isEmpty
-    let isProductValid = isProductValid(product)
+    let isProductNameValid = isProductValid(product)
     
     if isProductNameEmpty {
         let titleMessage = "Olá"
@@ -53,7 +53,7 @@ class SearchInteractor: SearchInteractorProtocol, SearchDataStoreProtocol {
         return false
     }
     
-    if !isProductValid {
+    if !isProductNameValid {
         let titleMessage = "Olá"
         let message = "O produto digitado"
         let buttonTitle = "Ok"
