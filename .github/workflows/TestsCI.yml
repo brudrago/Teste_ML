@@ -1,11 +1,11 @@
 name: Testing
-
 on:
   push:
-    branches: [ main ]
+    branches:
+    - main
   pull_request:
-    branches: [ main ]
-
+    branches:
+    - main
 jobs:
   test:
     name: Testing iOS app
@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Pod Install
         run: |
+          cd Teste_ML
           pod install --repo-update
       - name: Testing iOS app
         run: exec ./.github/scripts/test_app.sh
